@@ -1,0 +1,38 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+## Personal
+learning-data-6/
+learning-data-5/
+learning-data-4/
+learning-data-3/
+learning-data-2/
+learning-data/
+learning-data-old/
+sample_10.dat
+sample_20.dat
+sample_50.dat
+upload-dir/*
+sample.dat
