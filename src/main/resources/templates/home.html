@@ -1,1 +1,404 @@
-<h1>Hello World!</h1>
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Devanagari Character Recognition</title>
+
+<link href="/static/css/bootstrap.css" th:href="@{/css/bootstrap.css}"
+	rel="stylesheet" type="text/css" />
+<link href="/static/css/font-awesome.min.css"
+	th:href="@{/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+<link href="/static/css/main.css" th:href="@{/css/main.css}"
+	rel="stylesheet" type="text/css" />
+<link href="/static/css/my-custom-styles.css"
+	th:href="@{/css/my-custom-styles.css}" rel="stylesheet" type="text/css" />
+<link
+	href='http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700'
+	rel='stylesheet' type='text/css' />
+<link
+	href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,300italic,400italic,700,400,300'
+	rel='stylesheet' type='text/css' />
+<!-- FAVICONS -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144"
+	href="/static/ico/repute144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114"
+	href="/static/ico/repute114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72"
+	href="/static/ico/repute72x72.png" />
+<link rel="apple-touch-icon-precomposed"
+	href="/static/ico/repute57x57.png" />
+<link rel="shortcut icon" href="/static/ico/favicon.png" />
+</head>
+
+<body>
+	<!-- WRAPPER -->
+	<div class="wrapper">
+		<!-- NAVBAR -->
+		<nav class="navbar navbar-default " role="navigation" style="min-height: 100px !important;">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed"
+						data-toggle="collapse" data-target="#main-nav">
+						<span class="sr-only">Toggle Navigation</span> <i
+							class="fa fa-bars"></i>
+					</button>
+					<a href="index.html" class="navbar-brand navbar-logo"> <img
+						th:src="@{/img/logo/logo.png}"
+						alt="Devanagari Character Recognition" />
+					</a>
+				</div>
+			</div>
+		</nav>
+		<!-- END NAVBAR -->
+		<!-- HERO UNIT -->
+		<section class="hero-unit-slider slider-responsive no-margin">
+			<div id="carousel-hero" class="slick-carousel">
+				<div class="carousel-inner" role="listbox">
+					<div class="item active">
+						<img src="/img/sliders/slider3-h500.png" class="img-responsive"
+							alt="Slider Image" />
+						<div class="carousel-caption">
+
+
+							<h2 class="hero-heading">Recognize Image Text</h2>
+							<p class="lead" th:if="${output_text}"
+								th:text='${"Output text: " + output_text}' />
+							<button onclick="openFileUploader()"
+								class="btn btn-lg hero-button">Upload</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- END HERO UNIT -->
+		<!-- MAIN FEATURES -->
+		<div class="main-features ">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-sm-6">
+						<i class="fa fa-cubes "></i>
+						<h3 class="feature-heading">Segmentation</h3>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<i class="fa fa-globe "></i>
+						<h3 class="feature-heading">Kohonen Neural Network</h3>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<i class="fa fa-refresh "></i>
+						<h3 class="feature-heading">JAVA</h3>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<i class="fa fa-rocket "></i>
+						<h3 class="feature-heading">Spring</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END MAIN FEATURES -->
+		<!-- INTRO -->
+		<section>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<h2 class="section-heading">Devanagari Character Recognition</h2>
+						
+						<p>Devanagari character recognition system is built based on the Kohonen Neural Network
+						 approach. Line segmentation, word segmentation and character segmentation is done to
+						  identify character</p>
+						<p>Character recognition systems have become prevalent in recent years as the researches are progressing in the field of pattern recognition and also it helps in keeping records of  handwritten scripts and data for future reference. For Nepali Computing community, this report aims to provide  and assist in the making of Nepali handwritten and text recognition system.
+						 However, due to complex construct of Devanagari script, Matras and fused character could not be recognized.</p>
+					</div>
+					<div class="col-md-6">
+						<img src="/img/intro-img.png" class="img-responsive"
+							alt="Image Intro" />
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- END INTRO -->
+		
+		<!-- WHY REPUTE -->
+		<section>
+			<div class="container">
+				<h2 class="section-heading sr-only">WHY REPUTE</h2>
+				<div class="tab-content">
+					
+					<div class="tab-pane fade text-center" id="tab-bottom2">
+						<img src="/img/hero-unit-obj3.png"
+							class="img-responsive center-block margin-bottom-30px"
+							alt="Easy to Customize" />
+						<h3 class="text-accent-color">IT'S EASY TO CUSTOMIZE</h3>
+						<p class="lead">Efficiently incentivize leading-edge
+							alignments with go forward expertise. Conveniently myocardinate
+							leveraged process improvements through progressive models.</p>
+					</div>
+					<div class="tab-pane fade text-center" id="tab-bottom3">
+						<img src="/img/hero-unit-obj.png"
+							class="img-responsive center-block margin-bottom-30px"
+							alt="Clean and Elegant Design" />
+						<h3 class="text-accent-color">CLEAN &amp; ELEGANT DESIGN</h3>
+						<p class="lead">Competently implement bricks-and-clicks
+							collaboration and idea-sharing rather than visionary internal or
+							"organic" sources. Rapidiously matrix premium core competencies
+							for.</p>
+					</div>
+					<div class="tab-pane fade text-center" id="tab-bottom4">
+						<img src="/img/free.png"
+							class="img-responsive center-block margin-bottom-30px"
+							alt="Free Updates and Support" />
+						<h3 class="text-accent-color">GET UPDATES &amp; SUPPORT FOR
+							FREE</h3>
+						<p class="lead">Dramatically supply adaptive imperatives and
+							stand-alone content. Exceptional solutions after web-enabled
+							potentialities. Synergistically negotiate alternative best
+							practices whereas professional "outside the box" thinking.</p>
+					</div>
+				</div>
+				<div class="custom-tabs-line tabs-line-top">
+					<ul class="nav" role="tablist">
+						<li class="active"><a href="#tab-bottom1" role="tab"
+							data-toggle="tab">Responsive</a></li>
+						<li><a href="#tab-bottom2" role="tab" data-toggle="tab">Easy
+								to Customize</a></li>
+						<li><a href="#tab-bottom3" role="tab" data-toggle="tab">Design</a></li>
+						<li><a href="#tab-bottom4" role="tab" data-toggle="tab">Free
+								Updates &amp; Support</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<!-- END WHY REPUTE -->
+		
+		
+		<!-- NUMBERS -->
+		<section class="full-width-section no-margin">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-3 col-xs-6">
+						<div class="number-info horizontal text-white-color">
+							<i class="fa fa-plug pull-left"></i>
+							<p>
+								5200 <span>SUBSCRIBERS</span>
+							</p>
+						</div>
+					</div>
+					<div class="col-sm-3 col-xs-6">
+						<div class="number-info horizontal text-white-color">
+							<i class="fa fa-cubes pull-left"></i>
+							<p>
+								273 <span>PROJECTS</span>
+							</p>
+						</div>
+					</div>
+					<div class="col-sm-3 col-xs-6">
+						<div class="number-info horizontal text-white-color">
+							<i class="fa fa-thumbs-up pull-left"></i>
+							<p>
+								640K <span>APPRECIATIONS</span>
+							</p>
+						</div>
+					</div>
+					<div class="col-sm-3 col-xs-6">
+						<div class="number-info horizontal text-white-color">
+							<i class="fa fa-users pull-left"></i>
+							<p>
+								132 <span>CLIENTS</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- END NUMBERS -->
+		<!-- TESTIMONIAL -->
+		<section id="testimoial-parallax" class="testimonial-with-bg parallax">
+			<div class="container">
+				<div class="testimonial slick-carousel">
+					<div class="testimonial-container">
+						<div class="testimonial-body">
+							<p>Credibly extend parallel relationships after
+								clicks-and-mortar content. Credibly pontificate team building
+								alignments rather than diverse quality vectors.</p>
+							<div class="testimonial-author">
+								<img src="/img/user2.png" alt="Author" class="pull-left" /> <span><span
+									class="author-name">Antonius</span> <em>CEO of TheCompany</em></span>
+							</div>
+						</div>
+						<div class="testimonial-body">
+							<p>Credibly pontificate team building alignments rather than
+								diverse quality vectors. Monotonectally benchmark business
+								communities for distinctive mindshare.</p>
+							<div class="testimonial-author">
+								<img src="/img/user1.png" alt="Author" class="pull-left" /> <span><span
+									class="author-name">Michael</span> <em>General Manager of
+										DreamCorp</em></span>
+							</div>
+						</div>
+						<div class="testimonial-body">
+							<p>Appropriately morph low-risk high-yield process
+								improvements through progressive partnerships. Uniquely brand
+								enabled. Globally network timely imperatives without
+								plug-and-play schemas.</p>
+							<div class="testimonial-author">
+								<img src="/img/user5.png" alt="Author" class="pull-left" /> <span><span
+									class="author-name">Palmer</span> <em>Freelance Web
+										Developer</em></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- END TESTIMONIAL -->
+		<!-- OUR CLIENTS -->
+		<section class="clients">
+			<div class="container">
+				<h2 class="section-heading">OUR CLIENTS</h2>
+				<ul class="list-inline list-client-logo">
+					<li><a href="#"><img src="/img/clients/logo1.png"
+							alt="logo" /></a></li>
+					<li><a href="#"><img src="/img/clients/logo2.png"
+							alt="logo" /></a></li>
+					<li><a href="#"><img src="/img/clients/logo3.png"
+							alt="logo" /></a></li>
+					<li><a href="#"><img src="/img/clients/logo4.png"
+							alt="logo" /></a></li>
+					<li><a href="#"><img src="/img/clients/logo5.png"
+							alt="logo" /></a></li>
+				</ul>
+			</div>
+		</section>
+		<!-- END OUR CLIENTS -->
+		<!-- CALL-TO-ACTION -->
+		<section class="call-to-action">
+			<div class="container">
+				<div class="pull-left">
+					<h2 class="section-heading">GET IN TOUCH</h2>
+				</div>
+				<div class="pull-right">
+					<span>Call us at (1800) 765 - 4321 or</span>&nbsp;&nbsp;<a href="#"
+						class="btn btn-lg btn-primary">CONTACT US</a>
+				</div>
+			</div>
+		</section>
+		<section></section>
+		<!-- END CALL-TO-ACTION -->
+		<!-- FOOTER -->
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<!-- COLUMN 1 -->
+						<h3 class="sr-only">ABOUT US</h3>
+						<img src="/img/logo/repute-logo-light.png" class="logo"
+							alt="Repute" />
+						<p>Proactively aggregate B2B initiatives before extensive
+							channels. Monotonectally extend interactive methods of
+							empowerment through excellent applications. Rapidiously synergize
+							visionary products with sticky technology.</p>
+						<br />
+						<address class="margin-bottom-30px">
+							<ul class="list-unstyled">
+								<li>1234 North Main Street <br /> New York, NY 222222
+								</li>
+								<li>Phone: (1800) 765 - 4321</li>
+								<li>Email: email@yourdomain.com</li>
+							</ul>
+						</address>
+						<!-- END COLUMN 1 -->
+					</div>
+					<div class="col-md-4">
+						<!-- COLUMN 2 -->
+						<h3 class="footer-heading">USEFUL LINKS</h3>
+						<div class="row margin-bottom-30px">
+							<div class="col-xs-6">
+								<ul class="list-unstyled footer-nav">
+									<li><a href="#">About Us</a></li>
+									<li><a href="#">News</a></li>
+									<li><a href="#">Community</a></li>
+									<li><a href="#">Career</a></li>
+									<li><a href="#">Blog</a></li>
+								</ul>
+							</div>
+							<div class="col-xs-6">
+								<ul class="list-unstyled footer-nav">
+									<li><a href="#">Press Kit</a></li>
+									<li><a href="#">FAQ</a></li>
+									<li><a href="#">Terms</a></li>
+									<li><a href="#">Privacy Policy</a></li>
+									<li><a href="#">Contact Us</a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- END COLUMN 2 -->
+					</div>
+					<div class="col-md-4">
+						<!-- COLUMN 3 -->
+						<div class="newsletter">
+							<h3 class="footer-heading">NEWSLETTER</h3>
+							<p>Get the latest update from us by subscribing to our
+								newsletter.</p>
+							<form class="newsletter-form" method="POST">
+								<div class="input-group input-group-lg">
+									<input type="email" class="form-control" name="email"
+										placeholder="youremail@domain.com" /> <span
+										class="input-group-btn"><button class="btn btn-primary"
+											type="button">SUBSCRIBE</button></span>
+								</div>
+								<div class="alert"></div>
+							</form>
+						</div>
+						<div class="social-connect">
+							<h3 class="footer-heading">GET CONNECTED</h3>
+							<ul class="list-inline social-icons">
+								<li><a href="#" class="facebook-bg"><i
+										class="fa fa-facebook"></i></a></li>
+								<li><a href="#" class="twitter-bg"><i
+										class="fa fa-twitter"></i></a></li>
+								<li><a href="#" class="googleplus-bg"><i
+										class="fa fa-google-plus"></i></a></li>
+								<li><a href="#" class="rss-bg"><i class="fa fa-rss"></i></a></li>
+							</ul>
+						</div>
+						<!-- END COLUMN 3 -->
+					</div>
+				</div>
+			</div>
+			<!-- COPYRIGHT -->
+			<div class="text-center copyright">&copy;2016 The Develovers.
+				All Rights Reserved.</div>
+			<!-- END COPYRIGHT -->
+		</footer>
+		<!-- END FOOTER -->
+	</div>
+	<!-- END WRAPPER -->
+	<!-- JAVASCRIPTS -->
+	<script th:src="@{/js/jquery-2.1.1.min.js}"
+		src="/static/js/jquery-2.1.1.min.js"></script>
+	<script th:src="@{/js/bootstrap.min.js}"
+		src="/static/js/bootstrap.min.js"></script>
+	<script th:src="@{/js/plugins/slick/slick.min.js}"
+		src="/static/js/plugins/slick/slick.min.js"></script>
+	<script th:src="@{js/plugins/stellar/jquery.stellar.min.js}"
+		src="/static/js/plugins/stellar/jquery.stellar.min.js"></script>
+	<script th:src="@{/js/repute-scripts.js}"
+		src="/static/js/repute-scripts.js"></script>
+
+	<form method="POST" enctype="multipart/form-data" action="/"
+		style="display: none" id="upload-form">
+		<input type="file" name="file" id="file-upload" />
+	</form>
+	<script>
+		function openFileUploader() {
+			$("#file-upload").click();
+			$("#file-upload").change(function() {
+				$("#upload-form").submit();
+			});
+		}
+	</script>
+</body>
+
+</html>
+
+
+
